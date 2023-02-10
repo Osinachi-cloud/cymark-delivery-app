@@ -1,9 +1,6 @@
 package com.example.cymarkdelivery.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,8 +30,9 @@ public class Customer extends BaseModel{
     @Column(name = "gender", nullable = false)
     private String gender;
 
-    @Column(name = "address", nullable = false)
-    @ManyToOne
+//    @Column(name = "address", nullable = false)
+    @PrimaryKeyJoinColumn(name="id")
+    @OneToOne
     private Address address;
 
     @Column(name = "profile-image", nullable = false)

@@ -38,8 +38,11 @@ public class CustomerController {
 //        return new ResponseEntity<>(customerService.deleteCustomer(userid), HttpStatus.NO_CONTENT);
         customerService.deleteCustomer(userid);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-
+    @GetMapping("/hello")
+    public String sayHello(){
+        return "hello world people";
     }
 
 }

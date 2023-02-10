@@ -3,6 +3,7 @@ package com.example.cymarkdelivery.DTOs;
 import com.example.cymarkdelivery.model.Address;
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 public class CustomerResponse {
 
@@ -25,7 +26,7 @@ public class CustomerResponse {
     private String gender;
 
     @Column(name = "address", nullable = false)
-    @ManyToOne
+    @OneToOne
     private Address address;
 
     @Column(name = "profile-image", nullable = false)
